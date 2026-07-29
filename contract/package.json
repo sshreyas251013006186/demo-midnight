@@ -15,7 +15,7 @@
   "scripts": {
     "build": "npm run compact && rm -rf dist && tsc --project tsconfig.build.json && cp -Rf ./src/managed ./dist/managed && cp ./src/anonymous-feedback-board.compact ./dist",
     "ci": "npm run compact && npm run typecheck && npm run lint && npm run build && npm run test",
-    "compact": "compact compile src/anonymous-feedback-board.compact ./src/managed/anonymous-feedback-board",
+    "compact": "if command -v compact >/dev/null 2>&1; then compact compile src/anonymous-feedback-board.compact ./src/managed/anonymous-feedback-board; else echo 'compact CLI not found; using pre-compiled artifacts already committed in src/managed'; fi",
     "lint": "eslint src",
     "prepack": "npm build",
     "test": "vitest",
