@@ -8,8 +8,7 @@ The project demonstrates how Midnight's confidential smart contracts can provide
 
 # Live Demo
 
-**Vercel Deployment:** https://midnight-bootcamp.vercel.app/
-
+**Netlify Deployment:** (https://aesthetic-treacle-158c1c.netlify.app/)
 ---
 
 # Contract Address
