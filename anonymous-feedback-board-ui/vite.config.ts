@@ -23,6 +23,7 @@ import topLevelAwait from 'vite-plugin-top-level-await';
 export default defineConfig({
   cacheDir: './.vite',
   build: {
+    outDir: 'dist/client',
     target: 'esnext',
     minify: false,
     rollupOptions: {

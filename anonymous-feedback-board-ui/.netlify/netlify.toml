@@ -1,0 +1,27 @@
+plugins = []
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "/opt/build/repo/anonymous-feedback-board-ui/dist/client"
+publishOrigin = "ui"
+commandOrigin = "ui"
+command = "npm --workspace @midnight-ntwrk/anonymous-feedback-board-ui run build"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]

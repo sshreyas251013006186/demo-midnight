@@ -7,14 +7,14 @@
   "type": "module",
   "scripts": {
     "compact": "true",
-    "build": "npm --prefix ../contract run build && rm -rf ./dist && tsc && vite build --mode preprod && cp -r ../contract/dist/managed/anonymous-feedback-board/keys ./dist/keys && cp -r ../contract/dist/managed/anonymous-feedback-board/zkir ./dist/zkir",
-    "build:preview": "npm --prefix ../contract run build && rm -rf ./dist && tsc && vite build --mode preview && cp -r ../contract/dist/managed/anonymous-feedback-board/keys ./dist/keys && cp -r ../contract/dist/managed/anonymous-feedback-board/zkir ./dist/zkir",
+    "build": "npm --prefix ../contract run build && npm --prefix ../api run build && rm -rf ./dist && tsc && vite build --mode preprod && cp -r ../contract/dist/managed/anonymous-feedback-board/keys ./dist/client/keys && cp -r ../contract/dist/managed/anonymous-feedback-board/zkir ./dist/client/zkir",
+    "build:preview": "npm --prefix ../contract run build && npm --prefix ../api run build && rm -rf ./dist && tsc && vite build --mode preview && cp -r ../contract/dist/managed/anonymous-feedback-board/keys ./dist/client/keys && cp -r ../contract/dist/managed/anonymous-feedback-board/zkir ./dist/client/zkir",
     "build:start": "npm run build && npm run start",
     "build:start:preview": "npm run build:preview && npm run start",
     "ci": "npm run typecheck && npm run lint",
     "dev": "vite",
     "lint": "eslint ./src",
-    "start": "http-server --port 0 ./dist",
+    "start": "http-server --port 0 ./dist/client",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "preview": "vite preview",
     "prepack": "yarn build"
